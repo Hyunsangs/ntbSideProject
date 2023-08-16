@@ -1,0 +1,42 @@
+.quiz-card-header {
+    height: 100px;
+    background-color: rgb(231, 231, 232);
+    margin-bottom: 10px;
+
+    .question {
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+}
+
+.quiz-card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height: 80%;
+    border: 1px solid;
+  
+    > *:not(:last-child) {
+      border-right: 1px solid #000;
+      
+    }
+  
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 100px;
+    }
+
+    button:nth-child(1){
+        color: blue;
+        
+    }
+    button:nth-child(2){
+        font-size: 120px;
+        color: red;
+        padding-bottom: 27px;
+    }
+  }
