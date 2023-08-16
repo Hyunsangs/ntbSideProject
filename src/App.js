@@ -10,6 +10,7 @@ import Home from './Pages/HomePage/Home';
 import Result from './Pages/ResultPage/Result';
 import Explain from './Pages/ExplainPage/Explain';
 import Solution from './Pages/SolutionPage/Solution';
+import Footer from './Components/Footer';
 function App() {
   
   
@@ -27,6 +28,7 @@ function App() {
         <Route path='/solution' element={<Solution />} />
       </Routes>
       </MainWrapper>
+      <Footer />
       </div>
     
   );
