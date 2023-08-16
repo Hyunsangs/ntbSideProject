@@ -1,5 +1,6 @@
-import React from 'react'
-import Card from '../../UI/Card'
+import React from 'react';
+import Card from '../../UI/Card';
+import './Explain.scss';
 function Explain() {
   return (
     <div>
