@@ -3,17 +3,29 @@ import Card from '../../UI/Card'
 import './Result.scss';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Button from '../../UI/Button';
 
 function Result() {
     const location = useLocation();
     const score = location.state.score;
     const [ nickname, setNickname] = useState('');
-    const [resultData, setResultData] = useState(null); // resultData 상태 추가
     const navigate = useNavigate();
 
     const onNicknameHandler = (e) => {
         setNickname(e.currentTarget.value);
         
+    }
+
+    const onToGoRankHandler = () => {
+        navigate('/rank');
+    }
+
+    const onToGoHomeHandler = () => {
+        navigate('/');
+    }
+
+    const onToGoSolutionHandler = () => {
+        navigate('/solution');
     }
 
     
@@ -41,9 +53,7 @@ function Result() {
 
             if (response.status === 200) {
                 const resultData = response.data;
-                // resultData 상태 업데이트
-                setResultData(resultData); 
-
+                
                 // 결과 데이터를 localStorage에 저장
                 localStorage.setItem('resultData', JSON.stringify(resultData));
 
@@ -52,11 +62,11 @@ function Result() {
                 
             } else {
                 console.error('Failed to insert data');
-                // 실패 처리 로직 추가
+                
             }
         } catch (error) {
             console.error('Error:', error);
-            // 오류 처리 로직 추가
+            
         }
     }
     
@@ -65,24 +75,30 @@ function Result() {
         <div>
             <Card>
                 <div className='result-card-header'>
-                    <h2>결 과</h2>
-                    
+                    <p className='result'>결 과</p>
                 </div>
                 <div className='result-card-body'>
-                    <span>당신의 점수: {score} / 100</span>
+                    {score >= 80 && <p>당신은~~ <span>디지털 고수!!!</span></p>}
+                    {score >= 60 && score < 80 && <p>당신은~~ <span>디지털 중수!!!</span></p>}
+                    {score >= 40 && score < 60 && <p>당신은~~ <span>디지털 하수!!!</span></p>}
+                    {score <= 39 && <p>당신은~~ <span>디린이♥</span></p>}
+                    <p>점수: <span>{score}</span> / 100</p>
+                </div>
+                <div className='result-card-footer'>
+                    <p>※순위를 등록 하지 않으면 랭킹이 나타나지 않습니다.</p>
                     <form onSubmit={onSubmitHandler} >
                         <input
                         type='text'
-                        placeholder='닉네임'
+                        placeholder='닉네임을 적어주세요'
                         value={nickname}
                         onChange={onNicknameHandler}
                         >
                         </input>
-                        <button type='submit'>제출하기</button>
+                        <button type='submit'>순위 등록</button>
                     </form>
-                   
-                    <Link to="/rank"><p>순위 보러가기</p></Link>
-                    <Link to="/solution"><p>해설 보기</p></Link>
+                    <Button onClick={onToGoRankHandler}>랭킹 확인</Button>
+                    <Button onClick={onToGoHomeHandler}>홈으로</Button>
+                    <Button onClick={onToGoSolutionHandler}>해설 보기</Button>
                 </div>
             </Card>
         </div>

@@ -41,7 +41,16 @@ function Rank() {
     }, []);
 
     return (
-        <div className='rank-wrapper'>
+        <div>
+            <div className='result-data-wrapper'>
+                    {getData.length > 0 && (
+                        <div className='result-data'>
+                            <p>전체 등수: {getData[0].totalRank}</p>
+                            <p>전체 상위 퍼센트: {getData[0].percentile}%</p>
+                        </div>
+                    )}
+            </div>
+            <div className='rank-wrapper'>
             <div className='rank-wrapper-header'>
                 <p>순위</p>
                 <p>닉네임</p>
@@ -55,16 +64,10 @@ function Rank() {
                         <span>{post.score}</span>
                     </div>
                 ))}
-                <div className='result-data'>
-                    {getData.length > 0 && (
-                        <div>
-                            <p>전체 등수: {getData[0].totalRank}</p>
-                            <p>전체 상위 퍼센트: {getData[0].percentile}%</p>
-                        </div>
-                    )}
-                </div>
             </div>
         </div>
+        </div>
+        
     );
 }
 

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import Card from '../../UI/Card'
 import "./Quiz.scss";
 import { useNavigate } from 'react-router-dom';
@@ -9,10 +9,6 @@ function Quiz() {
     const [correctAnswers, setCorrectAnswers] = useState(0); // 맞은 개수 상태 추가
     const currentQuestion = questions[currentQuestionIndex];
     const navigate = useNavigate();
-
-    // useEffect(() => {
-    //     console.log(correctAnswers); // 업데이트된 값을 확인
-    // }, [correctAnswers]);
 
     const handleAnswerClick = (selectedAnswer) => {
         setCorrectAnswers(prevCorrectAnswers => {
@@ -35,13 +31,14 @@ function Quiz() {
     <div>
         <Card>
             <div className='quiz-card-header'>
-                <p>{`Q${currentQuestionIndex + 1}`}</p>
+                <p>{`Q ${currentQuestionIndex + 1}`} / 25</p>
                 <p className='question'>{currentQuestion.question}</p>
             </div>
             <div className='quiz-card-body'>
-                <button onClick={() => handleAnswerClick('O')}>O</button>
-                <button onClick={() => handleAnswerClick('X')}>X</button>
+                <button className='o-button' onClick={() => handleAnswerClick('O')}>O</button>
+                <button className='x-button' onClick={() => handleAnswerClick('X')}>X</button>
             </div>
+            
         </Card>
     </div>
   )

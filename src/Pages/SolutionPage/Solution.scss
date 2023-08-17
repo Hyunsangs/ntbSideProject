@@ -1,0 +1,35 @@
+.question-card {
+    font-family: "RIDIBatang" ;
+    width: 100%;
+    height: 300px;
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.3);
+    border: transparent;
+    margin-bottom: 20px;
+    padding: 1rem 1rem;
+    span {
+        color: blue;
+    }
+    .question-card-header{
+        padding: 1rem 1rem;
+        background-color: rgb(238, 235, 235);
+        font-size: 25px;
+    }
+
+    .question-card-body {
+        height: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+    
+        p:nth-child(1) {
+            font-size: 30px;
+            color: red;
+        }
+
+        p:nth-child(2){
+            font-size: 19px;
+        }
+    }
+}
+
