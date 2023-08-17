@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Card from '../../UI/Card'
 import './Result.scss';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Button from '../../UI/Button';
 

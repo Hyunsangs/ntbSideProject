@@ -1,5 +1,4 @@
-import React, {useEffect, useState} from 'react';
-import axios from 'axios';
+import React from 'react';
 import './App.css';
 import Header from './Components/Header';
 import {Routes, Route} from 'react-router-dom'
