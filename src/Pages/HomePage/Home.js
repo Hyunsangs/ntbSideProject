@@ -7,6 +7,7 @@ function Home() {
 
   const navigateQuizHandler = () => {
     navigate('/quiz');
+    localStorage.removeItem('resultData'); // 로컬 스토리지의 값을 제거
   }
 
   const navigateExplainHandler = () => {
