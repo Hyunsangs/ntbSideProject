@@ -14,8 +14,7 @@ function Rank() {
             try {
                 const response = await axios.get('http://localhost:8080/user/list', {
                     headers: {
-                        "Access-Control-Allow-Origin": `http://localhost:3000`,
-                        "Access-Control-Allow-Credentials":"true",
+                        'Content-Type': 'application/json'   
                     }
                 }); // 여기에 실제 API 엔드포인트를 사용하세요
                 setPosts(response.data);
