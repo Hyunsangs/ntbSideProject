@@ -17,6 +17,7 @@ function Quiz() {
             }
             return prevCorrectAnswers; // 정답이 아닐 경우 그대로 반환
         });
+        
         // 다음 문제로 이동하거나 퀴즈 종료 처리를 해줄 수 있습니다.
         if (currentQuestionIndex < questions.length - 1) {
             setCurrentQuestionIndex(currentQuestionIndex + 1);
@@ -31,7 +32,7 @@ function Quiz() {
     <div>
         <Card>
             <div className='quiz-card-header'>
-                <p>{`Q ${currentQuestionIndex + 1}`} / 25</p>
+                <p className='question-order'>{`Q ${currentQuestionIndex + 1}`} / 25</p>
                 <p className='question'>{currentQuestion.question}</p>
             </div>
             <div className='quiz-card-body'>

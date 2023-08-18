@@ -12,7 +12,7 @@ function Solution() {
           </div>
           <div className='question-card-body'>
             <p><span>답:</span> {questionData.answer}</p>
-            <p><span>해설:</span> {questionData.Commentary}</p>
+            <p><span>해설:</span>{questionData.Commentary}</p>
           </div>
         </div>
       ))}
