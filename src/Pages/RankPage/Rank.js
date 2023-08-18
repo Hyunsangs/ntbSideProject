@@ -21,7 +21,7 @@ function Rank() {
     
 
         getUserData();
-        console.log(posts);
+        
     }, []);
 
     useEffect(() => {
