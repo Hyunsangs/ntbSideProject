@@ -11,7 +11,7 @@ const Footer = () => {
         <div className='footer-total-wrapper'>
             
             <div className='footer-wrapper'>
-                <img className="footer-logo-image" src="/img/mainlogo.png" />
+                <img className="footer-logo-image" alt="logo"src="/img/mainlogo.png" />
                 <div className='footer-content'>
                     <div className='footer-high-content'><p>멋쟁이 사자처럼 중부대학교 Nice Team Bro 팀 NTB</p></div>
                     <div className='footer-middle-content'>
