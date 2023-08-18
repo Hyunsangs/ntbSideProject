@@ -45,7 +45,7 @@ function Result() {
         
 
         try {
-            const response = await axios.post('http://localhost:8080/user/result', userData, {
+            const response = await axios.post('http://118.67.128.212:3000/user/result', userData, {
                 headers: {
                     'Content-Type': 'application/json'    
                 }
