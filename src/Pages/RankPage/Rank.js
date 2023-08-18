@@ -12,7 +12,7 @@ function Rank() {
         // GET 요청을 통해 user_entity 테이블의 데이터를 가져오는 함수
         const getUserData = async () => {
             try {
-                const response = await axios.get('http://localhost:8080/user/list'); // 여기에 실제 API 엔드포인트를 사용하세요
+                const response = await axios.get('http://118.67.128.212:3000//user/list'); // 여기에 실제 API 엔드포인트를 사용하세요
                 setPosts(response.data);
             } catch (error) {
                 console.error('Error fetching data:', error);
