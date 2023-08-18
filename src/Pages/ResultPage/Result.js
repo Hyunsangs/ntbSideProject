@@ -61,7 +61,7 @@ function Result() {
                 navigate('/rank');
                 
             } else {
-                console.error('Failed to insert data: ', error);
+                console.error('Failed to insert data:' );
                 
             }
         } catch (error) {
